@@ -1,32 +1,20 @@
-
 import os
-from pathlib import Path
 from dotenv import load_dotenv
 
-# Project root: parent directory of config/
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-ENV_FILE = PROJECT_ROOT / ".env"
+load_dotenv()
 
-load_dotenv(dotenv_path=ENV_FILE, override=True)
+def _bool(name: str, default: bool) -> bool:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "y"}
 
-BASE_URL = os.getenv(
-    "API_BASE_URL",
-    "https://api.staging.krishivaas.com",
-).rstrip("/")
+API_BASE_URL = os.getenv("API_BASE_URL", "https://api.staging.krishivaas.com").rstrip("/")
+WEB_BASE_URL = os.getenv("WEB_BASE_URL", "https://devqa.staging.krishivaas.com").rstrip("/")
+API_TOKEN = os.getenv("API_TOKEN", "").strip()
+REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "30"))
+VERIFY_TLS = _bool("VERIFY_TLS", True)
 
-ADD_FARMER_PATH = os.getenv(
-    "ADD_FARMER_PATH",
-    "/api/v1/save-farmer-detail",
-).strip()
-
-ADD_FARMER_METHOD = os.getenv(
-    "ADD_FARMER_METHOD",
-    "POST",
-).upper()
-
-ADD_FARMER_EXPECTED_STATUS = int(
-    os.getenv("ADD_FARMER_EXPECTED_STATUS", "200")
-)
-
-API_TOKEN = os.getenv("API_TOKEN", "")
-API_TIMEOUT = float(os.getenv("API_TIMEOUT", "15"))
+def env_id(name: str):
+    value = os.getenv(name, "").strip()
+    return value or None

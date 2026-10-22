@@ -1,12 +1,10 @@
-@'
 .env
-.env.*
-!.env.example
+.venv/
+venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.venv/
-venv/
 allure-results/
 allure-report/
-'@ | Set-Content .gitignore
+reports/*
+!reports/.gitkeep

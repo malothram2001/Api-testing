@@ -1,0 +1,29 @@
+{
+  "add": {
+    "ccn_id": "39",
+    "crop_name": "Apples",
+    "crpdu_value": "",
+    "crpduty_value": "",
+    "intercrop_ccn_id": "",
+    "intercrop_crop_name": "",
+    "intercrop_crpdu_value": "",
+    "intercrop_crpduty_value": "",
+    "transplanted_date": "2026-09-27",
+    "platform": "web"
+  },
+  "update": {
+    "allocated_quantity": "0",
+    "allocated_quantity_units": "Tonne",
+    "area_unit": "acre",
+    "status": "CropBoundaryApproved",
+    "crop_area": "0",
+    "crop_name": "Apples",
+    "is_crop_name_updated": "0",
+    "crpdu_value": "39",
+    "intercrop_ccn_id": "",
+    "intercrop_crop_name": "",
+    "target_sowing_date": "2025-10-02",
+    "transplanted_date": "2026-05-03",
+    "crop_variety": ""
+  }
+}
