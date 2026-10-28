@@ -1,5 +1,9 @@
 # Krishivaas Onboarding API Automation
 
+## Documentation
+
+- [Project architecture and technical overview](docs/project-architecture.md)
+
 ## Setup (Windows PowerShell)
 
 ```powershell
